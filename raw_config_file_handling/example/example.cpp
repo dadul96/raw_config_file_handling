@@ -1,4 +1,4 @@
-#include "raw_config_file_handling.hpp"
+#include "../raw_config_file_handling.hpp"
 
 //set up a structure that includes all desired config-parameters:
 struct Configuration { //program configuration
