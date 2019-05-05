@@ -20,7 +20,7 @@ public:
 	//constructor for initializing the flags:
 	ConfigFileHandler() : SuccessfulReading(false), SuccessfulWriting(false) {}
 
-	//create a function that assigns the RawConfigData (from base class) to the Configuration-struct:
+	//create a method that assigns the RawConfigData (from base class) to the Configuration-struct:
 	void getConfig() {
 		constexpr int DesiredParameterCount = 2; //number of expected parameters (for checking if the reading was successful)
 		int ParameterCount = 0;
@@ -56,7 +56,7 @@ public:
 		}
 	}
 
-	//create a function that assigns the Configuration-struct to the RawConfigData (in base class) in order to write a config file:
+	//create a method that assigns the Configuration-struct to the RawConfigData (in base class) in order to write a config file:
 	void setConfig() {
 		int i = 0;
 		RawConfigData.clear();
