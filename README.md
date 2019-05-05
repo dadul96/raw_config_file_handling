@@ -21,7 +21,7 @@ struct Configuration { //program configuration
   vector<int> BallColorRGB;
 };
 ```
-2. Inherit from the base class (RawConfigFileHandler) and implement setConfig/getConfig Methods and optional features (for a more advanced use see the example folder):
+2. Inherit from the base class (RawConfigFileHandler) and implement setConfig/getConfig Methods and optional features (for a more advanced use, see the example folder):
 ```cpp
 class ConfigFileHandler : public RawConfigFileHandler {
 public:
