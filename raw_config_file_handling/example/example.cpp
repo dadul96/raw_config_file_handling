@@ -85,7 +85,11 @@ public:
 int main() {
 	ConfigFileHandler ConfigHandler1;
 
+	ConfigHandler1.setCommentChar('#'); //changing the comment character from ";" (default) to "#"
+
 	ConfigHandler1.setFilePath("C:\\dev\\VS2019_repos\\raw_config_file_handling\\raw_config_file_handling\\example\\example_config.ini"); //setting the path of the config-file (enter your desired path)
+
+	cout << ConfigHandler1.getCommentChar() << endl; //printing the set comment character
 
 	cout << ConfigHandler1.getFilePath() << endl; //printing the path of the config-file
 
