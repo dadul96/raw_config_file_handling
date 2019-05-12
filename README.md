@@ -1,12 +1,13 @@
 # raw_config_file_handling
-This small single header library allows handling of ini-style config-files. In addition to the standard ini-format, this library allows values with more than one parameter (separation with commas).
+This small single header library allows handling of ini-style config-files. In addition to the standard ini-format, this library allows values with more than one parameter (separation with commas). Comments in the config-file are getting ignored. The standard comment-character is the semicolon (;), but also custom characters could be set.
 Example of this config-file format:
 ```ini
-[GENERAL]
-BALL_COUNT=2
+;Comment1
+[GENERAL];Comment2
+BALL_COUNT=2;Comment3
 
 [BALL]
-BALL_COLOR_RGB=0,0,255
+BALL_RGB_COLOR=0,0,255
 ...
 ```
 ### Installation
@@ -21,7 +22,7 @@ struct Configuration { //program configuration
   vector<int> BallColorRGB;
 };
 ```
-2. Inherit from the base class (RawConfigFileHandler) and implement setConfig/getConfig Methods and optional features (for a more advanced use, see the example folder):
+3. Inherit from the base class (RawConfigFileHandler) and implement setConfig/getConfig Methods and optional features (for a more advanced use, see the example folder):
 ```cpp
 class ConfigFileHandler : public RawConfigFileHandler {
 public:
@@ -85,9 +86,6 @@ public:
 
 ### Built With
 * [Visual Studio 2019](https://visualstudio.microsoft.com/)
-
-### Note
-The example solution was built with Visual Studio 2019. If you are using other versions of VS you might need to change some settings.
 
 ### Author
 **Daniel Duller** - [dadul96](https://github.com/dadul96)
