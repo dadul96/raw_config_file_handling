@@ -22,6 +22,7 @@ struct ConfigDataStruct {
 class RawConfigFileHandler {
 private:
 	string FilePath;
+	char CommentChar;
 
 protected:
 	vector<ConfigDataStruct> RawConfigData;
@@ -41,12 +42,18 @@ protected:
 
 			while (getline(inFile, Input))
 			{
+				int CommentCharPos = -1;
 				int Char1Pos = -1;
 				int Char2Pos = -1;
 
 				string Key;
 				string RawValue;
 				vector<string> Value;
+
+				if ((CommentCharPos = Input.find(CommentChar)) >= 0)
+				{
+					Input.erase(CommentCharPos, Input.size());
+				}
 
 				if ((Char1Pos = Input.find(Char1)) > 0)
 				{
@@ -126,7 +133,7 @@ protected:
 	}
 
 public:
-	RawConfigFileHandler() : FilePath("config.ini") {}
+	RawConfigFileHandler() : FilePath("config.ini"), CommentChar(';') {}
 
 	void setFilePath(string pFilePath) {
 		FilePath = pFilePath;
@@ -134,6 +141,14 @@ public:
 
 	string getFilePath() {
 		return FilePath;
+	}
+
+	void setCommentChar(char pCommentChar) {
+		CommentChar = pCommentChar;
+	}
+
+	char getCommentChar() {
+		return CommentChar;
 	}
 
 	void printRawConfigData() {
