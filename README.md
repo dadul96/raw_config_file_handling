@@ -91,5 +91,5 @@ public:
 **Daniel Duller** - [dadul96](https://github.com/dadul96)
 
 ### License
-This project/library is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project/library is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
